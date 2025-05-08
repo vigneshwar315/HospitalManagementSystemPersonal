@@ -39,7 +39,7 @@ const ReceptionistDashboard = () => {
           })
         ]);
     
-        const appointments = appointmentsRes.data?.data || [];  // <--- Safely fallback to []
+        const appointments = appointmentsRes.data?.data || [];  
     
         const pendingActions = appointments.filter(
           appt => appt.status === 'Pending'
