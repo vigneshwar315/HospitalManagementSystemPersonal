@@ -41,7 +41,6 @@ const PatientDashboard = () => {
     age: ''
   });
 
-  // Appointment booking state
   const [bookingStep, setBookingStep] = useState(1);
   const [doctors, setDoctors] = useState([]);
   const [availableSlots, setAvailableSlots] = useState([]);
@@ -59,8 +58,6 @@ const PatientDashboard = () => {
     time: ''
   });
   const [isFetchingDoctors, setIsFetchingDoctors] = useState(false);
-
-  // Add state for modal loading and error
   const [profileLoading, setProfileLoading] = useState(false);
   const [profileError, setProfileError] = useState('');
 
