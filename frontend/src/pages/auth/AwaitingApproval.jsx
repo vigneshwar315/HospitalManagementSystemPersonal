@@ -1,4 +1,4 @@
-// src/pages/auth/AwaitingApproval.jsx
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaClock, FaEnvelope, FaHome } from 'react-icons/fa';
