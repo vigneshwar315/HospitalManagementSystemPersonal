@@ -1,4 +1,4 @@
-// 🌟 Premium GenAiSearch.jsx — AI Assistant Styled
+
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { FiArrowLeft, FiUpload, FiSearch, FiAlertCircle } from "react-icons/fi";
