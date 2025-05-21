@@ -5,8 +5,6 @@ const verifyAdmin = require("../middlewares/authMiddleware");
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv");
 dotenv.config();
-
-// Test email configuration
 const testEmailConfig = async () => {
     try {
         console.log('Testing email configuration...');
@@ -27,7 +25,7 @@ const testEmailConfig = async () => {
         // Send a test email
         const testResult = await testTransporter.sendMail({
             from: process.env.EMAIL_USER,
-            to: process.env.EMAIL_USER, // Send to yourself
+            to: process.env.EMAIL_USER, 
             subject: 'Test Email from Hospital System',
             text: 'This is a test email to verify your email configuration is working correctly.'
         });
