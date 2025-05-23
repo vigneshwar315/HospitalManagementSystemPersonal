@@ -1,10 +1,10 @@
-const User = require("../models/userModel"); // Use User model
+const User = require("../models/userModel");
 const Patient = require("../models/patientModel");
 const PDFDocument = require("pdfkit");
 const fs = require("fs");
 const path = require("path");
-const Appointment = require("../models/appointmentModel"); // Added missing import
-const Prescription = require("../models/prescriptionModel"); // Add Prescription model import
+const Appointment = require("../models/appointmentModel"); 
+const Prescription = require("../models/prescriptionModel"); 
 
 
 // Fetch patient details by customId (For Doctors)
