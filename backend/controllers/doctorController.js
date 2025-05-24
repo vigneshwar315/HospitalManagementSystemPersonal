@@ -94,7 +94,6 @@ exports.getPatientPrescriptions = async (req, res) => {
   }
 };
 
-// Get doctor notifications (Fix: Use User model instead of Doctor)
 exports.getNotifications = async (req, res) => {
   try {
     const doctor = await User.findById(req.user.id)
@@ -116,7 +115,6 @@ exports.getNotifications = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-// Mark a specific notification as read (Fix: Use User model)
 exports.markNotificationAsRead = async (req, res) => {
     try {
         const doctorId = req.user.id;
@@ -127,7 +125,6 @@ exports.markNotificationAsRead = async (req, res) => {
             return res.status(404).json({ message: "Doctor not found" });
         }
 
-        // Find notification by ID and mark it as read
         const notification = doctor.notifications.id(notificationId);
         if (!notification) {
             return res.status(404).json({ message: "Notification not found" });
