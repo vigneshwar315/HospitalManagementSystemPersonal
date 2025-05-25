@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import axios from "axios"; // Use your configured axios instance
+import axios from "axios"; //package import
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "../../styles/RegisterPatient.css";
@@ -65,7 +65,7 @@ const RegisterPatient = () => {
         contactNumber: formData.contactNumber,
       });
 
-      // Then send OTP
+      // otp is sending to the patient
       await handleSendOtp();
     } catch (err) {
       console.error(err);
