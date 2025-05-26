@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axiosInstance from '../config/axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+//receptionist dashboard component
 const ReceptionistDashboard = () => {
   const [doctors, setDoctors] = useState([]);
   const [appointments, setAppointments] = useState([]);
@@ -21,7 +21,7 @@ const ReceptionistDashboard = () => {
       const token = localStorage.getItem('token');
       console.log('Token available:', !!token);
       
-      // Log the API URL being called
+  
       const apiUrl = '/receptionist/doctors';
       console.log('API URL:', apiUrl);
       
@@ -105,7 +105,6 @@ const ReceptionistDashboard = () => {
           ))}
         </div>
       </div>
-
       {/* Appointments Section */}
       <div>
         <h2 className="text-xl font-semibold mb-4">Recent Appointments</h2>
@@ -145,5 +144,5 @@ const ReceptionistDashboard = () => {
     </div>
   );
 };
-
+// export the ReceptionistDashborad
 export default ReceptionistDashboard; 
