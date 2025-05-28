@@ -19,11 +19,10 @@ import doctor1 from "../../assets/doctor1.png";
 import doctor2 from "../../assets/doctor2.png"; 
 import doctor3 from "../../assets/doctor3.png";
 import hospitalBuilding from "../../assets/Yukimura_Hospital.png";
-// import axiosInstance from '../config/axios';
 const AboutUs = () => {
   const navigate = useNavigate(); 
   const [activeTab, setActiveTab] = useState('about');
-
+//sample data for the doctors
   const doctors = [
     {
       id: 1,
@@ -53,7 +52,6 @@ const AboutUs = () => {
       awards: ["Global Orthopedics Award", "Pioneer in Robotic Surgery"]
     }
   ];
-// testing dats
   const testimonials = [
     {
       id: 1,
