@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom'; // Add this line
+import { useNavigate } from 'react-router-dom'; 
 import { 
   FaHospital, 
   FaUserMd, 
@@ -19,7 +19,7 @@ import doctor1 from "../../assets/doctor1.png";
 import doctor2 from "../../assets/doctor2.png"; 
 import doctor3 from "../../assets/doctor3.png";
 import hospitalBuilding from "../../assets/Yukimura_Hospital.png";
-
+// import axiosInstance from '../config/axios';
 const AboutUs = () => {
   const navigate = useNavigate(); 
   const [activeTab, setActiveTab] = useState('about');
@@ -53,7 +53,7 @@ const AboutUs = () => {
       awards: ["Global Orthopedics Award", "Pioneer in Robotic Surgery"]
     }
   ];
-
+// testing dats
   const testimonials = [
     {
       id: 1,
