@@ -101,7 +101,7 @@ const RegisterPatient = () => {
       toast.error(err.response?.data?.message || "Failed to resend OTP");
     }
   };
-
+// handling the otp verification
   const handleVerifyOtp = async (e) => {
     e.preventDefault();
     const otpString = formData.otp.join("");
@@ -228,5 +228,5 @@ const RegisterPatient = () => {
     </div>
   );
 };
-
+//exporting the Register Patient
 export default RegisterPatient;
