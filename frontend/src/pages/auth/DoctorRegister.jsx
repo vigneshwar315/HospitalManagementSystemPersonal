@@ -41,11 +41,11 @@ const DoctorRegister = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
+// handling the change here
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    // Clear error when user types
+  
     if (errors[name]) {
       setErrors({ ...errors, [name]: null });
     }
@@ -56,7 +56,7 @@ const DoctorRegister = () => {
     if (!validateForm()) return;
     
     setLoading(true);
-    
+    // api checking
     try {
       const response = await axios.post('/api/staff/register-doctor', formData);
       toast.success('Registration successful! Awaiting admin approval.');
