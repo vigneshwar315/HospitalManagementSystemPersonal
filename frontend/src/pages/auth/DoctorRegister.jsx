@@ -56,7 +56,7 @@ const DoctorRegister = () => {
     if (!validateForm()) return;
     
     setLoading(true);
-    // api checking
+    
     try {
       const response = await axios.post('/api/staff/register-doctor', formData);
       toast.success('Registration successful! Awaiting admin approval.');
@@ -77,7 +77,7 @@ const DoctorRegister = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-100 flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Background elements */}
+     
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(15)].map((_, i) => (
           <motion.div
