@@ -50,7 +50,7 @@ const DoctorRegister = () => {
       setErrors({ ...errors, [name]: null });
     }
   };
-
+//handilg the submits and checking the errors
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
@@ -103,7 +103,7 @@ const DoctorRegister = () => {
           />
         ))}
       </div>
-
+// Main registrtion form comtainer
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
