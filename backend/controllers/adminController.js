@@ -18,11 +18,11 @@ const testEmailConfig = async () => {
             }
         });
 
-        // Verify the configuration
+        
         await testTransporter.verify();
         console.log('Email configuration is valid!');
 
-        // Send a test email
+        
         const testResult = await testTransporter.sendMail({
             from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER, 
