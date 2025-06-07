@@ -4,7 +4,7 @@
 ## Description
 The **Hospital Management System (HMS)** is a full-stack application designed to manage patient information, appointments, and medical records in a hospital setting. The system allows administrators, doctors, receptionists, and lab technicians to manage data efficiently. This system uses MongoDB for database management and Node.js with Express.js for the backend.
 
-## Technologies Used
+## Technologies Used in here
 <ul>
     <li><strong>Node.js</strong>: JavaScript runtime for the server-side code.</li>
     <li><strong>Express.js</strong>: Web framework for building RESTful APIs.</li>
@@ -14,7 +14,7 @@ The **Hospital Management System (HMS)** is a full-stack application designed to
     <li><strong>Body-Parser</strong>: Middleware to parse incoming request bodies.</li>
 </ul>
 
-## Features
+## Features of this project is 
 <ul>
     <li><strong>Role-Based Access Control</strong>: Different user roles (Admin, Doctor, Receptionist, Lab Technician) with specific permissions.</li>
     <li><strong>CRUD Operations</strong>: Perform Create, Read, Update, and Delete operations on patient data.</li>

@@ -8,7 +8,7 @@ const formatTime = (date) => {
   return date.toTimeString().slice(0, 5);
 };
 
-// Helper function to combine date and time
+
 const combineDateAndTime = (date, time) => {
   const [hours, minutes] = time.split(':');
   const combined = new Date(date);
@@ -21,7 +21,7 @@ exports.bookAppointment = async (req, res) => {
     console.log("Raw request body:", req.body);
     const { doctorId, patientId, date, time, notes, status } = req.body;
 
-    // Validate required fields
+   
     if (!doctorId || !patientId || !date || !time) {
       return res.status(400).json({
         success: false,
