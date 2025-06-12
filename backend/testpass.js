@@ -1,12 +1,4 @@
-// const bcrypt = require("bcryptjs");
-
-// const testPasswordComparison = async () => {
-//     const enteredPassword = "Shashi@123"; // Replace with the actual password
-//     const hashedPasswordFromDB = "$2b$10$TcdUBUMT4Ntm2epDo4O2lOn8RmIJFO7i.imFksw6LLy0bIjSb1MJa";
-
-//     const isMatch = await bcrypt.compare(enteredPassword, hashedPasswordFromDB);
-//     console.log("Password match:", isMatch);
-// };
+// this file is used to test password hashing and comparision
 
 // testPasswordComparison();
 
