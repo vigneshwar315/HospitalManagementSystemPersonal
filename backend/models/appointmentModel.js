@@ -60,7 +60,7 @@ const appointmentSchema = new mongoose.Schema(
   }
 );
 
-// Add virtual population
+
 appointmentSchema.virtual('doctor', {
   ref: 'User',
   localField: 'doctorId',
@@ -75,7 +75,7 @@ appointmentSchema.virtual('patient', {
   justOne: true
 });
 
-// Add index for faster queries
+
 appointmentSchema.index({ doctorId: 1, date: 1 });
 appointmentSchema.index({ patientId: 1, date: 1 });
 
