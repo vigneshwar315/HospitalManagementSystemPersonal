@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const User = require("./userModel"); // Import User model instead of redefining schema
+const User = require("./userModel"); 
 
-const Staff = mongoose.model("Staff", User.schema); // Reuse User schema
+const Staff = mongoose.model("Staff", User.schema);
 
 module.exports = Staff;

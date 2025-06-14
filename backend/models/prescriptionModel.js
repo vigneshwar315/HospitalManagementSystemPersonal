@@ -1,4 +1,4 @@
-// models/prescriptionModel.js
+
 const mongoose = require('mongoose');
 
 const prescriptionSchema = new mongoose.Schema({

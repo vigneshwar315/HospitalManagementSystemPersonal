@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const User = require('../models/userModel');
 const bcrypt = require('bcryptjs');
 require('dotenv').config();
-
+//adding the doctor
 async function addTestDoctor() {
   try {
     console.log('Connecting to MongoDB...');
