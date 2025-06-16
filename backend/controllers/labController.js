@@ -49,7 +49,6 @@ exports.updateLabResult = async (req, res) => {
       return res.status(400).json({ message: "Test name and result are required" });
     }
 
-    // Find the specific lab report to update
     const patient = await Patient.findOne({
       _id: patientId,
       "labReports.testName": testName,

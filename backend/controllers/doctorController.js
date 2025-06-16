@@ -7,7 +7,6 @@ const Appointment = require("../models/appointmentModel");
 const Prescription = require("../models/prescriptionModel"); 
 
 
-// Fetch patient details by customId (For Doctors)
 
 exports.searchPatient = async (req, res) => {
   try {
