@@ -28,7 +28,7 @@ const extractDrugsFromText = (text) => {
     const matches = text.match(regex) || [];
     return [...new Set(matches)];
 };
-
+//fetching drug details from gemini
 const fetchDrugDetails = async (medicines) => {
     const prompt = `
 You are a medical assistant. Return only a JSON array of medicine details.
@@ -56,7 +56,7 @@ ${medicines.join(', ')}
     const cleanJson = text.replace(/```(json)?/g, '').trim();
     return JSON.parse(cleanJson);
 };
-
+//uploading the pdf file
 app.post('/api/upload', upload.single('pdf'), async (req, res) => {
     try {
         if (!req.file) {
@@ -72,7 +72,7 @@ app.post('/api/upload', upload.single('pdf'), async (req, res) => {
 
         const drugDetails = await fetchDrugDetails(medicines);
 
-        // 🛠️ Normalize structure: Gemini might return an object instead of an array
+        
         const finalMedicines = Array.isArray(drugDetails)
             ? drugDetails
             : drugDetails.prescribedMedicines || [];
