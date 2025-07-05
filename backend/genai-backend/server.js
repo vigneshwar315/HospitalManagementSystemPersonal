@@ -69,10 +69,10 @@ app.post('/api/upload', upload.single('pdf'), async (req, res) => {
         if (medicines.length === 0) {
             return res.status(404).json({ message: 'No medicine names found' });
         }
-
+//drug details fetching
         const drugDetails = await fetchDrugDetails(medicines);
 
-        
+        //medicine array
         const finalMedicines = Array.isArray(drugDetails)
             ? drugDetails
             : drugDetails.prescribedMedicines || [];
@@ -91,7 +91,7 @@ app.post('/api/upload', upload.single('pdf'), async (req, res) => {
         });
     }
 });
-
+//searching the drug details
 app.post('/api/search', async (req, res) => {
     try {
         let { medicines } = req.body;
