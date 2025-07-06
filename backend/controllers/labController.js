@@ -48,7 +48,7 @@ exports.updateLabResult = async (req, res) => {
     if (!testName || !result) {
       return res.status(400).json({ message: "Test name and result are required" });
     }
-
+    //patient details
     const patient = await Patient.findOne({
       _id: patientId,
       "labReports.testName": testName,
@@ -61,7 +61,7 @@ exports.updateLabResult = async (req, res) => {
       });
     }
 
-    // Update the specific lab report
+    
     const updatedPatient = await Patient.findOneAndUpdate(
       {
         _id: patientId,

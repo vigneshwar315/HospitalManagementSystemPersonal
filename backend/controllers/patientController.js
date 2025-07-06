@@ -2,17 +2,16 @@ const Patient = require("../models/patientModel");
 const twilio = require("twilio");
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
-const sendSms = require("../utils/sendSms"); // Import your SMS utility
+const sendSms = require("../utils/sendSms");
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 dotenv.config();
 
-// Constants for OTP handling
 const OTP_EXPIRY_MINUTES = 10;
 const OTP_RESEND_COOLDOWN_MINUTES = 1;
 const MAX_OTP_ATTEMPTS = 3;
 
-// Validate environment variables
+// Validating environment variable
 const validateEnv = () => {
     const requiredVars = ['TWILIO_ACCOUNT_SID', 'TWILIO_AUTH_TOKEN', 'TWILIO_PHONE_NUMBER', 'JWT_SECRET'];
     const missingVars = requiredVars.filter(varName => !process.env[varName]);
