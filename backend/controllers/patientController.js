@@ -11,7 +11,7 @@ const OTP_EXPIRY_MINUTES = 10;
 const OTP_RESEND_COOLDOWN_MINUTES = 1;
 const MAX_OTP_ATTEMPTS = 3;
 
-// Validating environment variable
+
 const validateEnv = () => {
     const requiredVars = ['TWILIO_ACCOUNT_SID', 'TWILIO_AUTH_TOKEN', 'TWILIO_PHONE_NUMBER', 'JWT_SECRET'];
     const missingVars = requiredVars.filter(varName => !process.env[varName]);
@@ -30,12 +30,12 @@ try {
 
 const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
-// Generate OTP
+
 const generateOTP = () => {
     return crypto.randomInt(100000, 999999).toString();
 };
 
-// Check if OTP can be resent
+
 const canResendOTP = (lastOtpSent) => {
     if (!lastOtpSent) return true;
     const cooldownTime = new Date(lastOtpSent.getTime() + OTP_RESEND_COOLDOWN_MINUTES * 60 * 1000);
