@@ -4,13 +4,13 @@ const User = require('../models/userModel');
 const fs = require('fs').promises;
 const path = require('path');
 
-// Create a new prescription
+
 exports.createPrescription = async (req, res) => {
   try {
     const { appointmentId, diagnosis, medications, notes, fileName } = req.body;
     const doctorId = req.user._id;
 
-    // Validate appointment exists and belongs to the doctor
+    
     const appointment = await Appointment.findById(appointmentId);
     if (!appointment) {
       return res.status(404).json({ message: 'Appointment not found' });
@@ -20,13 +20,13 @@ exports.createPrescription = async (req, res) => {
       return res.status(403).json({ message: 'Not authorized to create prescription for this appointment' });
     }
 
-    // Check if prescription already exists
+    // Check if prescription already exists or not
     const existingPrescription = await Prescription.findOne({ appointmentId });
     if (existingPrescription) {
       return res.status(400).json({ message: 'Prescription already exists for this appointment' });
     }
 
-    // Set filePath: prefer uploaded file, else generated fileName from body
+    // Set filePath: prefer uploaded files
     let filePath = undefined;
     if (req.file && req.file.filename) {
       filePath = `prescriptions/${req.file.filename}`;
