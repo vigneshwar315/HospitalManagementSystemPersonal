@@ -91,7 +91,7 @@ app.post('/api/upload', upload.single('pdf'), async (req, res) => {
         });
     }
 });
-//searching the drug details
+
 app.post('/api/search', async (req, res) => {
     try {
         let { medicines } = req.body;
@@ -112,7 +112,7 @@ app.post('/api/search', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch drug info', message: err.message });
     }
 });
-
+// checking health endppoint
 app.get('/api/health', (req, res) => {
     res.json({
         status: 'ok',
@@ -121,7 +121,7 @@ app.get('/api/health', (req, res) => {
     });
 });
 
-// Start the server
+
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, "0.0.0.0", () => {
     console.log(`🚀 Server running at http://0.0.0.0:${PORT}`);
