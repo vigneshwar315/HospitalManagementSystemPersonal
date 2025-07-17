@@ -4,12 +4,11 @@ const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 const sendEmail = require("../utils/sendEmail");
 
-// Staff Login Function (For all staff roles)
 const staffLogin = async (req, res) => {
     try {
         const { email, password } = req.body;
 
-        // Trim and validate input
+        
         const trimmedEmail = email.trim();
         const trimmedPassword = password.trim();
 
@@ -17,19 +16,19 @@ const staffLogin = async (req, res) => {
             return res.status(400).json({ message: "Email and password are required" });
         }
 
-        // Find the user by email
+       
         const user = await User.findOne({ email: trimmedEmail });
 
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }
 
-        // Check if the user is approved
+       
         if (!user.isApproved) {
             return res.status(403).json({ message: "Approval pending. Please wait for admin approval." });
         }
 
-        // Compare the entered password with the hashed password
+        //compare password
         const isMatch = await bcrypt.compare(trimmedPassword, user.password);
         console.log("Entered password:", trimmedPassword); // Debugging
         console.log("Hashed password in DB:", user.password); // Debugging
